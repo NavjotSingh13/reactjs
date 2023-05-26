@@ -1,1 +1,20 @@
-React JS
+WEBSITE STRUCTURE
+
+* 
+
+Header
+-Logo
+-Nav Items
+
+Body
+-Search
+-Restaurant Container
+  -Restaurant Cards
+
+Footer
+-Copyright
+-Address
+-Contact
+
+
+*/
