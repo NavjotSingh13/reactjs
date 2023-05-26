@@ -44,28 +44,49 @@ const Header = () => {
 }
 
 const Restaurantcard = (props) => {
+  const {restaurantData} = props;
   return (
     <div className="restaurant-card" style={{  backgroundColor: "#f0f0f0" }}>
       <img
        className="restaurant-logo"
        alt = "restaurant-logo"
-       src="https://b.zmtcdn.com/data/pictures/3/20669503/144fc8254779fbb0df44c72c8dc1075b_o2_featured_v2.jpg?output-format=webp">
+       src={restaurantData.image}>
       </img>
-      <h3>{props.restaurantname}</h3>
-      <h4>{props.cuisine}</h4>
-      <h4>{props.ratings}</h4>
-      <h4>{props.deliverytime}</h4>
+      <h3>{restaurantData.restaurantname}</h3>
+      <h4>{restaurantData.cuisine}</h4>
+      <h4>{restaurantData.ratings}</h4>
+      <h4>{restaurantData.deliverytime}</h4>
+      <h4>₹{restaurantData.price}</h4>
     </div>
   )
 }
+
+const restaurantobj = [
+  {
+  image: "https://b.zmtcdn.com/data/pictures/3/20669503/144fc8254779fbb0df44c72c8dc1075b_o2_featured_v2.jpg?output-format=webp",
+  restaurantname: "KFC",
+  cuisine: "Paneer",
+  ratings: "4.8 stars",
+  deliverytime: "40 minutes",
+  price: 400
+  },
+  {
+    image: "https://b.zmtcdn.com/data/pictures/7/18535157/429ec6ddd1350367aae4aea48a031ece_o2_featured_v2.jpg?output-format=webp",
+    restaurantname: "KFC",
+    cuisine: "Paneer",
+    ratings: "4.8 stars",
+    deliverytime: "40 minutes",
+    price: 400
+  } 
+];
 
 const Body = () => {
   return (
     <div className="body">
       <div className="search">Search</div>
       <div className="restaurant-container">
-        <Restaurantcard restaurantname="KFC" cuisine="Paneer" ratings="4.9 stars" deliverytime="50 minutes" />
-        <Restaurantcard restaurantname="Pizzahut" cuisine="Pizza" ratings="4.9 stars" deliverytime="50 minutes" />
+        <Restaurantcard restaurantData = {restaurantobj[0]} />
+        <Restaurantcard restaurantData = {restaurantobj[1]} />
       </div>
     </div>
   )
