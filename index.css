@@ -40,3 +40,8 @@
 .restaurant-logo {
     width: 100%;
 }
+
+.filter-btn {
+    margin: 13px;
+    cursor: pointer;
+}
